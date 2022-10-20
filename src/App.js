@@ -1,7 +1,8 @@
 import "react-toastify/dist/ReactToastify.css";
+import Routes from "../src/routes/index"
 
 function App() {
-  return <h1 className="text-center bg-info">Welcome Recipe Sharing Site</h1>;
+  return <><Routes/></>
 }
 
 export default App;
