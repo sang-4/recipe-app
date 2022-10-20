@@ -1,13 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: #ec5800;
+  --bg-color: #f8f9fa;
+  --bg-main-color: #fefefe;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  background-color: var(--bg-main-color);
+}
+
+.active {
+  color: var(--primary-color) !important;
+  border-bottom: 9px double var(--primary-color);
+}
+
+.navbar-toggler:focus {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 0 var(--primary-color) !important ;
+}
+
+[title]{
+  cursor: pointer;
+}
+
+.nav__link {
+  color: var(--primary-color);
+  margin-left: 2rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #000000;
+  text-transform: capitalize;
+}
+
+.nav__link:hover {
+  color: var(--primary-color) !important;
+}
+
+.link__title:hover {
+  color: var(--primary-color);
+}
+
+.nav__linkRegister {
+  background-color: var(--primary-color);
+  padding: 0.4rem 0.35rem;
+  border-radius: 6px;
+}
+
+.link__titleRegister {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.link__titleRegister:hover {
+  background-color: var(--primary-color);
+  color: #d1caca;
+}
+
+.nav__linkLogin {
+  border: 5px double var(--primary-color);
+  padding: 0.4rem 0.35rem;
+  border-radius: 50rem;
+  box-shadow: 0 0 10px;
+}
+
+.link__titleLogin {
+  color: black;
+}
+
+.link__titleLogin:hover {
+  color: rgba(0, 0, 0, 0.712);
+}
+
+@media (max-width: 768px) {
+  .nav__link {
+    margin-left: 1rem;
+  }
+  .nav__linkRegister {
+    margin: 15px 0;
+  }
 }
