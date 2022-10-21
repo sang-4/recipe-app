@@ -1,0 +1,17 @@
+.end-container .end-buttons{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.end-buttons button{
+       width: 230px;
+       padding: 20px 0;
+       outline: none;
+       border: none;
+       background-color: #EC5924;
+       color: #ffffff;
+       font-weight: bold;
+       border-radius: 5px;
+       cursor: pointer;
+}
