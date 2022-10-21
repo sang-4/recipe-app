@@ -1,0 +1,36 @@
+p.contact-head{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.end-container .end-contact{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #E9DCDC;
+}
+
+.contact-one, .contact-two, .contact-three, .contact-four{
+    /* background-color: darkgreen; */
+    padding: 10px;
+}
+
+.contact-four form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-four form input{
+    padding: 3px;
+    outline: none;
+}
+
+.contact-four form button{
+    width: 50%;
+    border: none;
+    outline: none;
+    margin: 10px auto;
+    padding: 10px;
+   
+}
+
