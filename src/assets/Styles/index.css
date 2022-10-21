@@ -1,13 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+
+/* Available fon family */
+/* font-family: 'Abril Fatface', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Merriweather', serif;
+font-family: 'Poppins', sans-serif; */
+
 :root {
   --primary-color: #ec5800;
   --bg-color: #f8f9fa;
   --bg-main-color: #fefefe;
+  --footer-color: #e9dcdc;
 }
 
 * {
-  background-color: var(--bg-main-color);
+  font-family: "Poppins", sans-serif;
 }
 
+/* Navbar */
 .active {
   color: var(--primary-color) !important;
   border-bottom: 9px double var(--primary-color);
@@ -18,7 +28,7 @@
   box-shadow: 0 0 0 var(--primary-color) !important ;
 }
 
-[title]{
+[title] {
   cursor: pointer;
 }
 
@@ -69,6 +79,107 @@
 .link__titleLogin:hover {
   color: rgba(0, 0, 0, 0.712);
 }
+
+/* /Navbar */
+
+/* Footer */
+footer {
+  padding: 50px 37px;
+  background-color: var(--footer-color);
+  margin-top: 4rem;
+  border-radius: 11px;
+}
+
+.footer h2 {
+  font-family: "Abril Fatface", cursive;
+}
+
+.greatVibes {
+  font-family: "Great Vibes", cursive;
+}
+
+.footer__Links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__Link {
+  margin: 10px 0px;
+  color: black;
+  text-decoration: none;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.footer__Link:hover {
+  color: var(--primary-color);
+}
+
+.footer__Address {
+  margin: 20px 0px;
+}
+
+.contact p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.contact a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.input__email {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 7px 4px;
+  border-radius: 0.5rem;
+}
+
+[type="email"] {
+  border: none;
+  max-width: 80%;
+}
+
+[type="email"]:focus {
+  outline: none;
+}
+
+.footer__Btn {
+  margin-top: 22px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer__Btn button {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 10px 27px;
+  border-radius: 0.6rem;
+  font-size: 17px;
+}
+
+.footer__Btn button:hover {
+  transform: scale(1.1);
+}
+
+.bottom__Footer {
+  border-bottom: 15px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4rem 0 3rem 0;
+}
+
+.bottom__Footer :nth-child(1) {
+  margin-left: 2.9rem;
+}
+
+.bottom__Footer :nth-child(2) {
+  margin-right: 2.9rem;
+}
+/* /Footer */
 
 @media (max-width: 768px) {
   .nav__link {
