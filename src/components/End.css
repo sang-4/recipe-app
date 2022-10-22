@@ -1,13 +1,19 @@
 .end{
     height: 80vh; 
+  
+  
 }
 
 .end-container{
    padding: 5px; 
    font-family: "Montserrat", sans-serif;
+  
 }
 
 .end-container h2{
     text-align: center; 
+    padding: 0 0 20px 0;
+    color:#EC5924 ;
+    font-weight: bold;
     font-family: "Fraunces", sans-serif;
 }

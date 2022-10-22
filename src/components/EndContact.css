@@ -8,6 +8,7 @@ p.contact-head{
     justify-content: space-between;
     margin-top: 20px;
     background-color: #E9DCDC;
+    padding-bottom: 50px;
 }
 
 .contact-one, .contact-two, .contact-three, .contact-four{

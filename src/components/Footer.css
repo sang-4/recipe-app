@@ -1,0 +1,21 @@
+.footer{
+  
+    /* position: relative; */
+    
+}
+
+.footer-text{
+    display: flex;
+   
+}
+
+.footer-one, .footer-two{
+  position: absolute;
+ 
+}
+
+.footer-line{
+    width: 100%;
+    height: 4px;
+    background-color: #EC5924;
+}

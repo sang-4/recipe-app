@@ -6,7 +6,7 @@
 }
 
 .middle h2{
-    /* background-color: aquamarine; */
+    font-weight: bold;
     text-align: center;
     color: #EC5924;
     letter-spacing: 2px;
