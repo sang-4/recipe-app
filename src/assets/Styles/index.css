@@ -181,6 +181,37 @@ footer {
 }
 /* /Footer */
 
+/* Register Modal */
+.form_error {
+  font-size: 14px;
+  color: red;
+}
+
+.modal-footer {
+  border-top: none !important;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  color: #000000 !important;
+}
+
+.btn-primary:hover {
+  transform: scale(1.1);
+}
+
+.btn-close:focus {
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: none !important;
+}
+
+
+/* /Register Modal */
+
 @media (max-width: 768px) {
   .nav__link {
     margin-left: 1rem;
