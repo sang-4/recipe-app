@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { Nav, Navbar } from "react-bootstrap";
+
+// images 
 import logo from "../assets/Images/recipe-sharing-logo.png";
 
+// pages
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+
 const NavBar = () => {
+  // modal states
+  const [show, setShow] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+  // register open & close modal
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  // login open & close modal
+  const handleLoginClose = () => setShowLogin(false);
+  const handleLoginShow = () => setShowLogin(true);
+
   // navLinks
   const links = [
     { id: 1, link: "Recipe", resourceLink: "/recipe" },
@@ -14,37 +31,47 @@ const NavBar = () => {
   ];
 
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      variant="light"
-      className="my-2 d-flex"
-    >
-      <Link to="/" title="Welcome Recipe Sharing App">
-        <img src={logo} alt="recipe sharing logo" />
-      </Link>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="me-auto"></Nav>
-        <Nav className="nav__link">
-          {links.map(({ id, link, resourceLink }) => (
-            <NavLink className="nav__link" to={resourceLink} key={id}>
-              <span className="link__title">{link}</span>
-            </NavLink>
-          ))}
-          <Link className="nav__link nav__linkRegister" to="/Register">
-            <span className="link__titleRegister d-flex align-items-center justify-content-center">
-              Register
-            </span>
-          </Link>
-          <Link className="nav__link nav__linkLogin me-4" to="/login">
-            <span className="link__titleLogin d-flex align-items-center justify-content-center">
-              Sign in
-            </span>
-          </Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        variant="light"
+        className="my-2 d-flex"
+      >
+        <Link to="/" title="Welcome Recipe Sharing App">
+          <img src={logo} alt="recipe sharing logo" />
+        </Link>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto"></Nav>
+          <Nav className="nav__link">
+            {links.map(({ id, link, resourceLink }) => (
+              <NavLink className="nav__link" to={resourceLink} key={id}>
+                <span className="link__title">{link}</span>
+              </NavLink>
+            ))}
+            <Link className="nav__link nav__linkRegister" onClick={handleShow}>
+              <span className="link__titleRegister d-flex align-items-center justify-content-center">
+                Register
+              </span>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      {/* register Modal */}
+      <Register
+        handleClose={handleClose}
+        handleLoginShow={handleLoginShow}
+        show={show}
+      />
+
+      {/* login Modal */}
+      <Login
+        handleLoginClose={handleLoginClose}
+        handleShow={handleShow}
+        showLogin={showLogin}
+      />
+    </>
   );
 };
 

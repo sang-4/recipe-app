@@ -65,21 +65,6 @@ font-family: 'Poppins', sans-serif; */
   color: #d1caca;
 }
 
-.nav__linkLogin {
-  border: 5px double var(--primary-color);
-  padding: 0.4rem 0.35rem;
-  border-radius: 50rem;
-  box-shadow: 0 0 10px;
-}
-
-.link__titleLogin {
-  color: black;
-}
-
-.link__titleLogin:hover {
-  color: rgba(0, 0, 0, 0.712);
-}
-
 /* /Navbar */
 
 /* Footer */
@@ -181,11 +166,119 @@ footer {
 }
 /* /Footer */
 
+/* Register Modal */
+.form_error {
+  font-size: 14px;
+  color: red;
+}
+
+.modal-footer {
+  border-top: none !important;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  color: #000000 !important;
+}
+
+.btn-primary:hover {
+  transform: scale(1.009);
+}
+
+.btn-close:focus {
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: none !important;
+}
+
+.error_container {
+  height: 1.2rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  border: none;
+  background-color: #d9d9d9;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif !important;
+}
+
+input:focus {
+  outline: none;
+}
+
+div.col-lg-6 {
+  padding: 0 !important;
+}
+
+.margin__end {
+  margin-right: 20px;
+}
+
+.form-check-input {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #d9d9d9 !important;
+}
+
+div.col-lg-1,
+.col-lg-11 {
+  padding: 0px !important;
+  display: flex;
+  align-items: center;
+  margin: 0px !important;
+}
+
+.form-check-input:focus {
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.submit__btn button {
+  width: 100% !important;
+  border: none;
+  padding: 9px;
+}
+
+::placeholder {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.registerLogin {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.registerLogin:hover {
+  color: #ec560096;
+}
+
+.abril {
+  font-family: "Abril Fatface", cursive;
+}
+/* /Register Modal */
+
 @media (max-width: 768px) {
   .nav__link {
     margin-left: 1rem;
   }
   .nav__linkRegister {
     margin: 15px 0;
+  }
+  .margin__end {
+    display: none;
   }
 }
