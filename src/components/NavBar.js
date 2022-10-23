@@ -4,15 +4,21 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../assets/Images/recipe-sharing-logo.png";
 
+// pages
 import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 const NavBar = () => {
-  // modal 
+  // modal
   const [show, setShow] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
-  // open & close modal functions 
+  // open & close modal functions
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleLoginClose = () => setShowLogin(false);
+  const handleLoginShow = () => setShowLogin(true);
 
   // navLinks
   const links = [
@@ -24,7 +30,6 @@ const NavBar = () => {
 
   return (
     <>
-      {" "}
       <Navbar
         collapseOnSelect
         expand="lg"
@@ -52,7 +57,11 @@ const NavBar = () => {
                 Register
               </span>
             </Link>
-            <Link className="nav__link nav__linkLogin me-4">
+
+            <Link
+              className="nav__link nav__linkLogin me-4"
+              onClick={handleLoginShow}
+            >
               <span className="link__titleLogin d-flex align-items-center justify-content-center">
                 Sign in
               </span>
@@ -62,6 +71,7 @@ const NavBar = () => {
       </Navbar>
       {/* register Modal */}
       <Register handleClose={handleClose} show={show} />
+      <Login handleLoginClose={handleLoginClose} showLogin={showLogin} />
     </>
   );
 };
