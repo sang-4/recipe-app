@@ -3,18 +3,19 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useFormik } from "formik";
-import { signupSchema } from "../schemas";
+import { signupSchema } from "../schemas/register";
 import { Link } from "react-router-dom";
 
 const initialValues = {
   firstname: "",
   lastname: "",
+  username: "",
   email: "",
   password: "",
   cpassword: "",
 };
 
-const Register = ({ handleClose, show }) => {
+const Register = ({ handleClose, show, handleLoginShow }) => {
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
@@ -77,6 +78,21 @@ const Register = ({ handleClose, show }) => {
             <div className="row">
               <input
                 type="text"
+                name="username"
+                value={values.username}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                placeholder="Username:"
+              />
+              <div className="error_container">
+                {errors.username && touched.username && (
+                  <p className="form_error">{errors.username}</p>
+                )}
+              </div>
+            </div>
+            <div className="row">
+              <input
+                type="email"
                 name="email"
                 value={values.email}
                 onBlur={handleBlur}
@@ -138,8 +154,10 @@ const Register = ({ handleClose, show }) => {
             <Button type="submit">Create an account</Button>
             <div className="d-flex align-items-center justify-content-center m-auto mt-3">
               <span className="me-3">Already have an account ?</span>
-              <span>
-                <Link className="registerLogin">Log In</Link>
+              <span onClick={handleClose}>
+                <Link className="registerLogin" onClick={handleLoginShow}>
+                  Log In
+                </Link>
               </span>
             </div>
           </Modal.Footer>

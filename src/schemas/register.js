@@ -7,6 +7,7 @@ const passwordRegex = new RegExp(
 export const signupSchema = Yup.object({
   firstname: Yup.string().min(3).required("Please enter your first name."),
   lastname: Yup.string().min(3).required("Please enter your last name."),
+  username: Yup.string().min(3).required("Please enter your username."),
   email: Yup.string()
     .email("Please enter valid email.")
     .required("Please enter your email."),

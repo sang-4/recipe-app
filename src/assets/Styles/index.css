@@ -65,21 +65,6 @@ font-family: 'Poppins', sans-serif; */
   color: #d1caca;
 }
 
-.nav__linkLogin {
-  border: 5px double var(--primary-color);
-  padding: 0.4rem 0.35rem;
-  border-radius: 50rem;
-  box-shadow: 0 0 10px;
-}
-
-.link__titleLogin {
-  color: black;
-}
-
-.link__titleLogin:hover {
-  color: rgba(0, 0, 0, 0.712);
-}
-
 /* /Navbar */
 
 /* Footer */
@@ -214,6 +199,7 @@ footer {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   border: none;
@@ -221,7 +207,7 @@ input[type="password"] {
   padding: 10px;
   border-radius: 10px;
   font-size: 18px;
-  font-family: 'Poppins', sans-serif !important; 
+  font-family: "Poppins", sans-serif !important;
 }
 
 input:focus {
@@ -265,24 +251,24 @@ div.col-lg-1,
   padding: 9px;
 }
 
-::placeholder{
-  font-weight: 700 ;
+::placeholder {
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
-.registerLogin{
+.registerLogin {
   color: var(--primary-color);
   text-decoration: none;
   font-size: 18px;
   font-weight: 700;
 }
 
-.registerLogin:hover{
+.registerLogin:hover {
   color: #ec560096;
 }
 
-.abril{
-  font-family: 'Abril Fatface', cursive ;
+.abril {
+  font-family: "Abril Fatface", cursive;
 }
 /* /Register Modal */
 
