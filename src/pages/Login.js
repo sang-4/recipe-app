@@ -11,7 +11,7 @@ const initialValues = {
   password: "",
 };
 
-const Login = ({ handleLoginClose, showLogin }) => {
+const Login = ({ handleLoginClose, showLogin, handleShow }) => {
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
@@ -75,8 +75,10 @@ const Login = ({ handleLoginClose, showLogin }) => {
             <Button type="submit">Login</Button>
             <div className="d-flex align-items-center justify-content-center m-auto mt-3">
               <span className="me-3">No account ?</span>
-              <span>
-                <Link className="registerLogin">Register Here</Link>
+              <span onClick={handleLoginClose}>
+                <Link className="registerLogin" onClick={handleShow}>
+                  Register Here
+                </Link>
               </span>
             </div>
           </Modal.Footer>
