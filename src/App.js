@@ -1,16 +1,19 @@
-import "react-toastify/dist/ReactToastify.css";
-import Landing from "./components/Landing";
 
 
-function App() {
-  return (
-    <div>
-       {/* <h1 className="text-center bg-info">Welcome Recipe Sharing Site</h1> */}
-  <Landing/>
+// import Routes from "../src/routes/index"
+// import Container from "react-bootstrap/Container";
 
-    </div>
-    
-  )
-}
 
-export default App;
+
+
+ 
+
+
+// function App() {
+//   return <Container>
+//     <Routes/>
+  
+//    </Container>
+// }
+
+// export default App;
