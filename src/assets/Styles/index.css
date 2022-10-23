@@ -201,7 +201,7 @@ footer {
 }
 
 .btn-primary:hover {
-  transform: scale(1.1);
+  transform: scale(1.009);
 }
 
 .btn-close:focus {
@@ -209,7 +209,81 @@ footer {
   box-shadow: none !important;
 }
 
+.error_container {
+  height: 1.2rem;
+}
 
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  border: none;
+  background-color: #d9d9d9;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif !important; 
+}
+
+input:focus {
+  outline: none;
+}
+
+div.col-lg-6 {
+  padding: 0 !important;
+}
+
+.margin__end {
+  margin-right: 20px;
+}
+
+.form-check-input {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #d9d9d9 !important;
+}
+
+div.col-lg-1,
+.col-lg-11 {
+  padding: 0px !important;
+  display: flex;
+  align-items: center;
+  margin: 0px !important;
+}
+
+.form-check-input:focus {
+  box-shadow: none !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.submit__btn button {
+  width: 100% !important;
+  border: none;
+  padding: 9px;
+}
+
+::placeholder{
+  font-weight: 700 ;
+  letter-spacing: 2px;
+}
+
+.registerLogin{
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.registerLogin:hover{
+  color: #ec560096;
+}
+
+.abril{
+  font-family: 'Abril Fatface', cursive ;
+}
 /* /Register Modal */
 
 @media (max-width: 768px) {
@@ -218,5 +292,8 @@ footer {
   }
   .nav__linkRegister {
     margin: 15px 0;
+  }
+  .margin__end {
+    display: none;
   }
 }
