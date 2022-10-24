@@ -1,7 +1,14 @@
 import React from "react";
+import Hero from "../components/Hero";
+import Middle from "../components/Middle";
+import End from "../components/End"
 
 const Home = () => {
-  return <div>Home Page</div>;
+  return <div>
+    <Hero/>
+    <Middle/>
+    <End/>
+  </div>;
 };
 
 export default Home;
