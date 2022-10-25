@@ -222,6 +222,7 @@ font-family: 'Poppins', sans-serif; */
 .panel .middle-desc h3 {
   text-align: center;
 }
+
 /* Middle */
 
 /* End */
@@ -241,6 +242,7 @@ font-family: 'Poppins', sans-serif; */
 .end-container .end-buttons {
   padding: 5px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
