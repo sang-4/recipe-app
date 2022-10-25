@@ -1,4 +1,5 @@
 import React from "react"
+import pan from "../assets/Images/pan-spray.png"
 
 
 function Hero(){
@@ -19,7 +20,7 @@ function Hero(){
                     <div className="image-sect">
                         <div className="hero-blob"></div>
                         <div className="image-sect image">
-                            <img src="pan-spray.png" />
+                            <img src={pan} alt="pan-spray"/>
                         </div>
                     </div>
                 </div>
