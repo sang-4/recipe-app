@@ -148,7 +148,14 @@ height: 100vh;
   background-color: #EC5924;
   position: absolute;
   top: 0;
-  right: -90px;  
+  right: -80px;  
+}
+
+@media(max-width:968px){
+  .hero-blob{
+    display: none;
+  }
+ 
 }
 /* Hero */
 
@@ -169,6 +176,7 @@ height: 100vh;
 
 .middle-container{
 display: flex;
+flex-wrap: wrap;
 height: 500px;
 margin: 50px auto;
 justify-content: space-between;
@@ -185,10 +193,11 @@ justify-content: space-between;
   overflow: hidden;
   border-radius: 3px;
 
+
 }
 
 .middle-container .panel h3{
-  color: #ffffff;
+  color: #EC5924;
   text-transform: capitalize;
 }
 
@@ -225,6 +234,7 @@ justify-content: space-between;
   text-align: center;
 
 }
+
 /* Middle */
 
 /* End */
@@ -250,6 +260,7 @@ justify-content: space-between;
 .end-container .end-buttons{
   padding: 5px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -263,6 +274,7 @@ justify-content: space-between;
      font-weight: bold;
      border-radius: 5px;
      cursor: pointer;
+     margin-top: 10px;
 }
 /* End */
 
