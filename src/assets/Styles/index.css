@@ -146,18 +146,7 @@ font-family: 'Poppins', sans-serif; */
   background-color: #ec5924;
   position: absolute;
   top: 0;
-<<<<<<< HEAD
-  right: -80px;  
-}
-
-@media(max-width:968px){
-  .hero-blob{
-    display: none;
-  }
- 
-=======
   right: -90px;
->>>>>>> a6d048c596faa843eade6f096d3411440447bc59
 }
 /* Hero */
 
@@ -175,20 +164,11 @@ font-family: 'Poppins', sans-serif; */
   letter-spacing: 2px;
 }
 
-<<<<<<< HEAD
-.middle-container{
-display: flex;
-flex-wrap: wrap;
-height: 500px;
-margin: 50px auto;
-justify-content: space-between;
-=======
 .middle-container {
   display: flex;
   height: 500px;
   margin: 50px auto;
   justify-content: space-between;
->>>>>>> a6d048c596faa843eade6f096d3411440447bc59
 }
 
 .middle-container .panel {
@@ -201,19 +181,10 @@ justify-content: space-between;
   position: relative;
   overflow: hidden;
   border-radius: 3px;
-<<<<<<< HEAD
-
-
-}
-
-.middle-container .panel h3{
-  color: #EC5924;
-=======
 }
 
 .middle-container .panel h3 {
   color: #ffffff;
->>>>>>> a6d048c596faa843eade6f096d3411440447bc59
   text-transform: capitalize;
 }
 
@@ -275,19 +246,6 @@ justify-content: space-between;
   justify-content: space-between;
 }
 
-<<<<<<< HEAD
-.end-buttons button{
-     width: 230px;
-     padding: 20px 0;
-     outline: none;
-     border: none;
-     background-color: #EC5924;
-     color: #ffffff;
-     font-weight: bold;
-     border-radius: 5px;
-     cursor: pointer;
-     margin-top: 10px;
-=======
 .end-buttons button {
   width: 230px;
   padding: 20px 0;
@@ -298,7 +256,6 @@ justify-content: space-between;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
->>>>>>> a6d048c596faa843eade6f096d3411440447bc59
 }
 /* End */
 
