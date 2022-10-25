@@ -490,6 +490,47 @@ div.col-lg-1,
 
 /* /Error page */
 
+/* Recipe */
+.card__recipe {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  /* margin: 20px 0px !important; */
+}
+
+.card_container {
+  min-height: 70vh !important;
+}
+
+.recipe__title {
+  text-align: center;
+}
+
+.recipe__description {
+  text-align: justify;
+  letter-spacing: 1.4px;
+}
+
+.recipe__link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.recipe__link:hover {
+  color: #000000;
+}
+
+.see__more{
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.see__more:hover{
+  color: #ec5924 ;
+  text-decoration: none;
+}
+/* /Recipe */
+
 @media (max-width: 768px) {
   .nav__link {
     margin-left: 1rem;
