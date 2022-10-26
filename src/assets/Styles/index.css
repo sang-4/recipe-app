@@ -77,16 +77,17 @@ font-family: 'Poppins', sans-serif; */
   width: 40%;
   height: 100%;
   padding: 10px 0px 10px 10px;
+  
 }
 
 .hero-text .text {
-  margin: 200px auto;
+  margin: 12.75em auto;
   padding: 10px 0px 10px 20px;
 }
 
 .hero-text .text h1 {
   text-align: center;
-  font-size: 65px;
+  font-size: 4rem;
   transition: 1s ease-in-out;
   letter-spacing: 2px;
   color: #ec5924;
@@ -137,6 +138,7 @@ font-family: 'Poppins', sans-serif; */
 .image-sect.image {
   width: 600px;
   position: relative;
+  
 }
 
 .hero-blob {
@@ -147,6 +149,37 @@ font-family: 'Poppins', sans-serif; */
   position: absolute;
   top: 0;
   right: -90px;
+}
+
+/* Hero media queries */
+@media screen and (max-width: 1000px){
+  .hero-blob{
+    display: none;
+  }
+
+  .hero-text .text h1{
+    font-size: 3rem;
+  }
+
+  /* .hero{
+    flex-direction: column;
+    background-color: #ec5924;
+  }
+
+  .hero-text{
+    margin: 1rem auto;
+    padding: 0px;
+  }
+
+  .hero-text .text p{
+    display: none;
+  }
+
+  .hero-image .image{
+    background-color: transparent;
+  } */
+
+
 }
 /* Hero */
 
