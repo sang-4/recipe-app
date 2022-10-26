@@ -19,6 +19,20 @@ const Login = ({ handleLoginClose, showLogin, handleShow }) => {
       onSubmit: (values, actions) => {
         actions.resetForm();
         handleLoginClose();
+
+        
+        fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+          username: values.username,
+          password: values.password,
+        }),
+        })
+
         console.log(values);
       },
     });
