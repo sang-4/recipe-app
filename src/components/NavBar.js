@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 
 // images 
-import logo from "../assets/Images/recipe-sharing-logo.png";
+import logo from "../assets/Images/recipe-sharing-logo-new.png";
 
 // pages
 import Register from "../pages/Register";
@@ -39,7 +39,9 @@ const NavBar = () => {
         className="my-2 d-flex"
       >
         <Link to="/" title="Welcome Recipe Sharing App">
-          <img src={logo} alt="recipe sharing logo" />
+          <div className="logo">
+            <img src={logo} alt="recipe sharing logo" />
+          </div>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

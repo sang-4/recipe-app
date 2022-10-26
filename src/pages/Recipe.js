@@ -56,6 +56,7 @@ const Recipe = () => {
           <Search searchItems={searchItems} />
         </div>
       </div>
+      <hr />
       <div className="row card__recipe ">
         {searchRecipeInput.length > 1
           ? filteredRecipe.map(({ id, name, description, image_path }) => (
