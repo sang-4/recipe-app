@@ -14,7 +14,7 @@ export const signupSchema = Yup.object({
   password: Yup.string()
     .matches(passwordRegex, "Please enter valid password.")
     .required("Please enter your password."),
-  cpassword: Yup.string()
+  password_confirmation: Yup.string()
     .oneOf([Yup.ref("password")], "Password do NOT match!")
     .required("Please enter confirm password."),
 });

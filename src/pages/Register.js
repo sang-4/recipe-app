@@ -12,7 +12,7 @@ const initialValues = {
   username: "",
   email: "",
   password: "",
-  cpassword: "",
+  password_confirmation: "",
 };
 
 const Register = ({ handleClose, show, handleLoginShow }) => {
@@ -23,6 +23,24 @@ const Register = ({ handleClose, show, handleLoginShow }) => {
       onSubmit: (values, actions) => {
         actions.resetForm();
         handleClose();
+        
+        fetch("http://localhost:3000/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+          firstname: values.firstname,
+          lastname: values.lastname,
+          username: values.username,
+          email: values.email,
+          password: values.password,
+          password_confirmation: values.password_confirmation,
+        }),
+        })
+
+       
         console.log(values);
       },
     });
@@ -123,15 +141,15 @@ const Register = ({ handleClose, show, handleLoginShow }) => {
             <div className="row">
               <input
                 type="password"
-                name="cpassword"
-                value={values.cpassword}
+                name="password_confirmation"
+                value={values.password_confirmation}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 placeholder="Confirm Password:"
               />
               <div className="error_container">
-                {errors.cpassword && touched.cpassword && (
-                  <p className="form_error">{errors.cpassword}</p>
+                {errors.password_confirmation && touched.password_confirmation && (
+                  <p className="form_error">{errors.password_confirmation}</p>
                 )}
               </div>
             </div>
