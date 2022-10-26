@@ -566,6 +566,37 @@ div.col-lg-1,
 }
 /* /Recipe */
 
+/* search recipe */
+.recipe__search{
+  border: none;
+  width: 200px;
+  
+}
+
+.recipe__search__container{
+  display: flex;
+  border: 1px solid var(--primary-color);
+  border-radius: 50rem;
+  padding: 4px 5px 4px 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+
+[placeholder="Search recipe"]{
+  margin-left: 8px;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+/* /search recipe */
+
 @media (max-width: 768px) {
   .nav__link {
     margin-left: 1rem;
