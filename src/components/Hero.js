@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 import pan from "../assets/Images/pan-spray.png"
 
 
@@ -12,7 +13,7 @@ function Hero(){
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <div className="buttons">
                             <button className="btn-get">Get recipe</button>
-                            <button className="btn-add">Add recipe</button>
+                           <Link to='addrecipe' ><button className="btn-add">Add recipe</button></Link>
                         </div>
                     </div>
                 </div>
