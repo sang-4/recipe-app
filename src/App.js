@@ -4,7 +4,11 @@ import Container from "react-bootstrap/Container";
 
 
 function App() {
-  return <Container><Routes/></Container>
+  return (
+    <Container className="container__recipe">
+      <Routes />
+    </Container>
+  );
 }
 
 export default App;
