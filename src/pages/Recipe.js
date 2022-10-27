@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Search from "../components/Search";
 
 // our api
-const api = "http://127.0.0.1:3000/recipes";
+const api = "http://localhost:5000/recipes";
 
 const Recipe = () => {
   // recipe state
