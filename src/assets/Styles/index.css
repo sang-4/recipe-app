@@ -383,7 +383,7 @@ footer {
 /* Register Modal */
 .form_error {
   font-size: 14px;
-  color: red;
+  color: #EC5800;
 }
 
 .modal-footer {
@@ -477,7 +477,7 @@ div.col-lg-1,
 }
 
 .registerLogin:hover {
-  color: #ec560096;
+  color: #EC5800;
 }
 
 .abril {
@@ -623,4 +623,3 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
-/* /Media queries */

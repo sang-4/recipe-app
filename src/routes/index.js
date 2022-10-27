@@ -15,6 +15,8 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Error from "../pages/Error";
 import SingleRecipe from "../pages/SingleRecipe";
+import AddRecipe from "../pages/AddRecipe";
+
 
 const index = () => {
   return (
@@ -29,6 +31,7 @@ const index = () => {
           <Route path="about" element={<About />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
+          <Route path="addrecipe" element={<AddRecipe />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
