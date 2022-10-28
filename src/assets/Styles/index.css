@@ -629,7 +629,9 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 90vw;
   height: 90vh;
   display: flex;
-  
+  -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
   font-family: "Roboto";
   margin: 40px auto;
   /* overflow: hidden; */
@@ -650,10 +652,7 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 10px;
 }
 
-.single .right{
- 
-  
-}
+
 
 .right-header{
   background-color: #ec5924;
@@ -664,11 +663,6 @@ input[type="search"]::-webkit-search-results-decoration {
 .right-name{
   display: flex;
   justify-content: space-between;
-}
-
-.right-name .icons{
- 
-  
 }
 
 .right-name h2{
@@ -704,6 +698,10 @@ font-size: 16px;
   cursor: pointer;
 }
 
+.right-selectors p.new{
+  color: #d1caca;
+}
+
 .right-selectors p::after{
   position: absolute;
   content: "";
@@ -718,17 +716,6 @@ font-size: 16px;
   transition: 0.5s;
 
 }
-
-.right-selectors p:active{
-  color: #d1caca;
-}
-
-.right-selectors p:hover::after{
-  transform: scaleX(1);
-  transform-origin: left;
-
-}
-
 .right-bottom{
   background-color: #ffffff;
   padding: 10px;
@@ -736,11 +723,7 @@ font-size: 16px;
   
 }
 
-.right-bottom .one {
-  position: absolute;
-}
 
-.right-bottom .two{
-  position: absolute;
-  display: none;
-}
+
+
+/* Single Recipe */
