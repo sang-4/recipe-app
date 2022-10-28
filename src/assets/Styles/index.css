@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Roboto&display=swap');
 
 /* ******** Available font family ******** 
 font-family: 'Abril Fatface', cursive;
@@ -623,3 +624,123 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 }
 
+/* Single recipe */
+.single{
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  
+  font-family: "Roboto";
+  margin: 40px auto;
+  /* overflow: hidden; */
+}
+
+.single .left, .single .right{
+  width: 50%;
+  height: 100%;
+}
+
+.single .left{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.single .left{
+  padding: 10px;
+}
+
+.single .right{
+ 
+  
+}
+
+.right-header{
+  background-color: #ec5924;
+  padding: 10px 10px 4px 10px;
+  color: #ffffff;
+}
+
+.right-name{
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-name .icons{
+ 
+  
+}
+
+.right-name h2{
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+.right-details{
+display: flex;
+justify-content: space-between;
+}
+
+.right-details h4{
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.right-details-desc p{
+font-size: 16px;
+}
+
+.right-selectors{
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+
+  height: 20px;
+  position: relative;
+}
+
+.right-selectors p{
+  cursor: pointer;
+}
+
+.right-selectors p::after{
+  position: absolute;
+  content: "";
+  background: #bc7c9c;
+  top: 100%;
+  left: 0;
+  width: 30%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: right;
+  /* transform:  0.5s; */
+  transition: 0.5s;
+
+}
+
+.right-selectors p:active{
+  color: #d1caca;
+}
+
+.right-selectors p:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
+
+}
+
+.right-bottom{
+  background-color: #ffffff;
+  padding: 10px;
+  position: relative;
+  
+}
+
+.right-bottom .one {
+  position: absolute;
+}
+
+.right-bottom .two{
+  position: absolute;
+  display: none;
+}
