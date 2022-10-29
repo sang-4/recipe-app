@@ -1,31 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
 
-// our api
-const api = "";
-
-const Recipe = () => {
-  // recipe state
-  const [recipe, setRecipe] = useState([]);
-
+const Recipe = ({ recipe }) => {
   // search filter state
   const [searchRecipeInput, setSearchRecipeInput] = useState("");
   const [filteredRecipe, setFilteredRecipe] = useState([]);
-
-  // call loadRecipes function
-  useEffect(() => {
-    loadRecipes();
-  }, []);
-
-  // fetch recipes from api
-  const loadRecipes = async () => {
-    const response = await axios.get(api);
-
-    setRecipe(response.data);
-  };
 
   // function to truncate the words to the secified number
   const truncate = (str, no_of_words) => {
