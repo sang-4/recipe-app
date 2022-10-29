@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faBookmark, faHeart} from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faBookmark, faHeart} from '@fortawesome/free-solid-svg-icons';
+import { FaFacebookF, FaTwitter , FaTelegram} from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
+import { AiFillInstagram } from "react-icons/ai";
 import React, {useState} from "react";
 import "../assets/Styles/index.css"
 
@@ -12,8 +15,12 @@ const SingleRecipe = () => {
   return <div className="single">
     <div className="left" style={{ backgroundImage: 'url("https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=400")' }}>
       <FontAwesomeIcon icon={faArrowLeft} style ={{color: "#ffffff", cursor: "pointer"}} />
-      <div className="single-socials">
-     
+      <div className="left-socials">
+     <FaFacebookF/>
+     <AiFillInstagram/>
+     <FaTwitter/>
+     <FaTelegram/>
+     <CiMail/>
       </div>
     </div>
     <div className="right">
