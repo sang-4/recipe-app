@@ -35,21 +35,21 @@ const SingleRecipe = () => {
       <div className="right-bottom">
         <div className="bottom one">
           <ul>
-            <li> 2 pounds freshly ground chuck, (at least 80% lean, a.k.a. 80/20)</li>
-            <li>1 tablespoon onion powder</li>
-            <li>1 teaspoon salt</li>
-            <li>1 teaspoon freshly ground black pepper</li>
-            <li>12 slices deli-counter American cheese</li>
+            <li> <p>2 pounds freshly ground chuck, (at least 80% lean, a.k.a. 80/20)</p></li>
+            <li><p>1 tablespoon onion powder</p></li>
+            <li><p>1 teaspoon salt</p></li>
+            <li><p>1 teaspoon freshly ground black pepper</p></li>
+            <li><p>12 slices deli-counter American cheese</p></li>
           </ul>
-          <h3>To garnish</h3>
+          <h5>To garnish</h5>
           <ul>
-            <li>ketchup</li>
-            <li>thousand island dressing</li>
-            <li>mayonnaise</li>
-            <li>sliced red onion</li>
-            <li>sliced tomatoes</li>
-            <li>sliced pickles</li>
-            <li>fresh lettuce leaves</li>
+            <li><p>ketchup</p></li>
+            <li><p>thousand island dressing</p></li>
+            <li><p>mayonnaise</p></li>
+            <li><p>sliced red onion</p></li>
+            <li><p>sliced tomatoes</p></li>
+            <li><p>sliced pickles</p></li>
+            <li><p>fresh lettuce leaves</p></li>
           </ul>
         </div>
        
