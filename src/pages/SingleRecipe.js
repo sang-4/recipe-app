@@ -1,12 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons'
-import React from "react";
+import { faArrowLeft, faBookmark, faHeart} from '@fortawesome/free-solid-svg-icons'
+import React, {useState} from "react";
 import "../assets/Styles/index.css"
 
 const SingleRecipe = () => {
+  const [liked, setLiked] = useState(false);
+  const [saved, setSaved] = useState(false);
+
+  
+
   return <div className="single">
     <div className="left" style={{ backgroundImage: 'url("https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=400")' }}>
       <FontAwesomeIcon icon={faArrowLeft} style ={{color: "#ffffff", cursor: "pointer"}} />
+      <div className="single-socials">
+     
+      </div>
     </div>
     <div className="right">
       <div className="right-header">
@@ -14,7 +22,7 @@ const SingleRecipe = () => {
           <h2>Cheese Burger</h2>
           <div className="icons">
           <FontAwesomeIcon icon={faBookmark}/>
-          <FontAwesomeIcon icon={faHeart} style={{marginLeft: "20"}}/>
+          <FontAwesomeIcon icon={faHeart} style={{marginLeft: "20", cursor: "pointer"}} />
           </div>
           
         </div>

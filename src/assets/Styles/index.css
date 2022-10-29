@@ -696,6 +696,7 @@ font-size: 1em;
 
 .right-selectors p{
   cursor: pointer;
+  font-weight: 700;
 }
 
 .right-selectors p.new{
