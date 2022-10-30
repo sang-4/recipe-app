@@ -20,7 +20,7 @@ import AddRecipe from "../pages/AddRecipe";
 import Procedure from "../pages/Procedure";
 
 // our api
-const api = "http://localhost:5000/recipes";
+const api = "";
 
 const MainRoutes = () => {
   const [recipe, setRecipe] = useState([]);
@@ -52,7 +52,7 @@ const MainRoutes = () => {
           <Route path="about" element={<About />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
-          <Route path="addrecipe" element={<AddRecipe />} />
+          <Route path="addrecipe" element={<AddRecipe loadRecipes={loadRecipes} />} />
           <Route path="procedure" element={<Procedure recipe={recipe} />} />
           <Route path="*" element={<Error />} />
         </Route>
