@@ -15,12 +15,12 @@ This project is being developed and maintained by:
 
 ReCipe is an app that allows users to view, add, delete, update and comment on recipes, be it their own or those created by other users. Users can also view other users' recipes and comment on them. Users also have the ability to share their favortie recipes with other users via social media platforms.
 
-![alt text](./assets/p1.jpg)
-![alt text](./assets/p2.jpg)
-![alt text](./assets/p3.jpg)
-![alt text](./assets/p4.jpg)
-![alt text](./assets/p5.jpg)
-![alt text](./assets/p6.jpg)
+![alt text](./readmephotos/p1.JPG)
+![alt text](./readmephotos/p2.JPG)
+![alt text](./readmephotos/p3.JPG)
+![alt text](./readmephotos/p4.JPG)
+![alt text](./readmephotos/p5.JPG)
+![alt text](./readmephotos/p6.JPG)
 
 ---
 
