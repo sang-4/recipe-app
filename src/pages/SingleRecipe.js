@@ -26,19 +26,19 @@ const SingleRecipe = ({ recipe }) => {
     id,
     ingredients,
     name,
-    image_path,
+    image,
     total_time_string,
     servings,
     country,
     description,
   } = selectedRecipe;
 
-  // link to the spoaecific url 
+  // link to the spoaecific url
   const shareUrl = `http://localhost:5000/recipe/${id}`;
 
   // ingredients
-  let ingredientList = ingredients.map((ingredient) => (
-    <li>
+  let ingredientList = ingredients.map((ingredient, index) => (
+    <li key={index}>
       <p>{ingredient}</p>
     </li>
   ));
@@ -49,14 +49,14 @@ const SingleRecipe = ({ recipe }) => {
         className="left"
         style={{
           backgroundImage: `url(
-            https://recipes.eerieemu.com${image_path}
+            https://recipes.eerieemu.com${image}
           )`,
         }}
       >
         <Link to="/recipe">
           <FontAwesomeIcon
             icon={faArrowLeft}
-            style={{ color: "#ffffff", cursor: "pointer" }}
+            style={{ color: "#ffffff", cursor: "pointer", fontSize: "40px" }}
           />
         </Link>
         <div className="left-socials">
@@ -69,10 +69,10 @@ const SingleRecipe = ({ recipe }) => {
           >
             <FacebookIcon size={40} round={true} />
           </FacebookShareButton>
-          <TwitterShareButton  className="left-socials-icon" url={shareUrl}>
+          <TwitterShareButton className="left-socials-icon" url={shareUrl}>
             <TwitterIcon size={40} round={true} />
           </TwitterShareButton>
-          <WhatsappShareButton  className="left-socials-icon" url={shareUrl}>
+          <WhatsappShareButton className="left-socials-icon" url={shareUrl}>
             <WhatsappIcon size={40} round={true} />
           </WhatsappShareButton>
 

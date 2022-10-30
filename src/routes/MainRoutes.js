@@ -52,7 +52,10 @@ const MainRoutes = () => {
           <Route path="about" element={<About />} />
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
-          <Route path="addrecipe" element={<AddRecipe loadRecipes={loadRecipes} />} />
+          <Route
+            path="addrecipe"
+            element={<AddRecipe loadRecipes={loadRecipes} />}
+          />
           <Route path="procedure" element={<Procedure recipe={recipe} />} />
           <Route path="*" element={<Error />} />
         </Route>

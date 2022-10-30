@@ -10,14 +10,14 @@ const api = "";
 
 // initial data state
 const initialState = {
-  recipe: "",
+  foodname: "",
   description: "",
   ingredients: "",
   country: "",
-  people: "",
+  servings: "",
   rating: "",
-  procedure: "",
-  images: "",
+  instructions: "",
+  image: "",
 };
 
 const AddRecipe = ({ loadRecipes }) => {
@@ -26,17 +26,17 @@ const AddRecipe = ({ loadRecipes }) => {
   const [inputs, setInputs] = useState(initialState);
 
   const {
-    recipe,
+    foodname,
     description,
     ingredients,
     country,
-    people,
+    servings,
     rating,
-    images,
-    procedure,
+    image,
+    instructions,
   } = inputs;
 
-  const handleChange1 = (e) => {
+  const handleChange = (e) => {
     let { name, value } = e.target;
 
     setInputs({
@@ -48,14 +48,14 @@ const AddRecipe = ({ loadRecipes }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      !recipe ||
+      !foodname ||
       !description ||
       !ingredients ||
       !country ||
-      !people ||
+      !servings ||
       !rating ||
-      !images ||
-      !procedure
+      !image ||
+      !instructions
     ) {
       toast.error("please fill all input fields");
     } else {
@@ -83,10 +83,10 @@ const AddRecipe = ({ loadRecipes }) => {
         <label>Name:</label>
         <input
           type="text"
-          name="recipe"
+          name="foodname"
           placeholder="name:"
-          value={recipe}
-          onChange={handleChange1}
+          value={foodname}
+          onChange={handleChange}
         />
         <br />
 
@@ -96,7 +96,7 @@ const AddRecipe = ({ loadRecipes }) => {
           name="description"
           placeholder="full description:"
           value={description}
-          onChange={handleChange1}
+          onChange={handleChange}
         />
         <br />
         <label>Ingredients:</label>
@@ -105,17 +105,17 @@ const AddRecipe = ({ loadRecipes }) => {
           name="ingredients"
           value={ingredients}
           placeholder="onions, ginger, eggs,..."
-          onChange={handleChange1}
+          onChange={handleChange}
         />
 
         <br />
-        <label>Procedure:</label>
+        <label>Write your procedure instructions:</label>
         <textarea
           type="text"
-          name="procedure"
-          placeholder="write your Procedure:"
-          value={procedure}
-          onChange={handleChange1}
+          name="instructions"
+          placeholder="write your instructions:"
+          value={instructions}
+          onChange={handleChange}
         />
 
         <div className="short">
@@ -125,16 +125,16 @@ const AddRecipe = ({ loadRecipes }) => {
             name="country"
             value={country}
             placeholder="country"
-            onChange={handleChange1}
+            onChange={handleChange}
           />
           <br />
-          <label>People:</label>
+          <label>servings:</label>
           <input
             type="number"
-            name="people"
-            value={people}
+            name="servings"
+            value={servings}
             placeholder="2"
-            onChange={handleChange1}
+            onChange={handleChange}
           />
 
           <br />
@@ -145,17 +145,17 @@ const AddRecipe = ({ loadRecipes }) => {
             name="rating"
             value={rating}
             placeholder="0 - 10"
-            onChange={handleChange1}
+            onChange={handleChange}
           />
           <br />
 
-          <label>Images:</label>
+          <label>Image:</label>
           <input
-            type="file"
-            name="images"
-            value={images}
-            placeholder="0 - 10"
-            onChange={handleChange1}
+            type="text"
+            name="image"
+            value={image}
+            placeholder="Paste image url/link"
+            onChange={handleChange}
           />
         </div>
       </form>
