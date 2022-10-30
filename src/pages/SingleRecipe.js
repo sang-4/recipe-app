@@ -6,18 +6,24 @@ import {
   faBookmark,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import { FaFacebookF, FaTwitter , FaTelegram} from "react-icons/fa";
-import { AiFillMail } from "react-icons/ai";
-import { AiFillInstagram } from "react-icons/ai";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from "react-share";
 
 const SingleRecipe = ({ recipe }) => {
   const { recipeId } = useParams();
 
-  // filter recipes 
+  // filter recipes
   const selectedRecipe = recipe.find((recip) => recip.id === Number(recipeId));
 
   // destructuring
   const {
+    id,
     ingredients,
     name,
     image_path,
@@ -27,7 +33,10 @@ const SingleRecipe = ({ recipe }) => {
     description,
   } = selectedRecipe;
 
-  // ingredients 
+  // link to the spoaecific url 
+  const shareUrl = `http://localhost:5000/recipe/${id}`;
+
+  // ingredients
   let ingredientList = ingredients.map((ingredient) => (
     <li>
       <p>{ingredient}</p>
@@ -51,14 +60,24 @@ const SingleRecipe = ({ recipe }) => {
           />
         </Link>
         <div className="left-socials">
-                    <div className="left-line"></div>
-                    <FaFacebookF   className ="left-socials-icon"/>
-                    <AiFillInstagram   className ="left-socials-icon"/>
-                    <FaTwitter   className ="left-socials-icon"/>
-                    <FaTelegram   className ="left-socials-icon"/>
-                    <AiFillMail   className ="left-socials-icon"/>
-                    <div className="left-line" style={{marginTop: "0.6em"}}></div>
-                </div>
+          <div className="left-line"></div>
+          <FacebookShareButton
+            className="left-socials-icon"
+            url={shareUrl}
+            quote={name}
+            hashtag={"#recipes"}
+          >
+            <FacebookIcon size={40} round={true} />
+          </FacebookShareButton>
+          <TwitterShareButton  className="left-socials-icon" url={shareUrl}>
+            <TwitterIcon size={40} round={true} />
+          </TwitterShareButton>
+          <WhatsappShareButton  className="left-socials-icon" url={shareUrl}>
+            <WhatsappIcon size={40} round={true} />
+          </WhatsappShareButton>
+
+          <div className="left-line" style={{ marginTop: "0.6em" }}></div>
+        </div>
       </div>
       <div className="right">
         <div className="right-header">
@@ -85,10 +104,9 @@ const SingleRecipe = ({ recipe }) => {
           </div>
           <div className="right-selectors">
             <p className="new">Ingredients</p>
-            <Link to="/procedure" >Procedure</Link>
+            <p>Procedure</p>
           </div>
         </div>
-
         <div className="right-bottom">
           <div className="bottom one">
             <ul>{ingredientList}</ul>
