@@ -6,15 +6,24 @@ import {
   faBookmark,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from "react-share";
 
 const SingleRecipe = ({ recipe }) => {
   const { recipeId } = useParams();
 
-  // filter recipes 
+  // filter recipes
   const selectedRecipe = recipe.find((recip) => recip.id === Number(recipeId));
- 
+
   // destructuring
   const {
+    id,
     ingredients,
     name,
     image_path,
@@ -24,7 +33,10 @@ const SingleRecipe = ({ recipe }) => {
     description,
   } = selectedRecipe;
 
-  // ingredients 
+  // link to the spoaecific url 
+  const shareUrl = `http://localhost:5000/recipe/${id}`;
+
+  // ingredients
   let ingredientList = ingredients.map((ingredient) => (
     <li>
       <p>{ingredient}</p>
@@ -73,13 +85,34 @@ const SingleRecipe = ({ recipe }) => {
           </div>
           <div className="right-selectors">
             <p className="new">Ingredients</p>
-            <Link to="/procedure" >Procedure</Link>
+            <p>Procedure</p>
           </div>
         </div>
-
         <div className="right-bottom">
           <div className="bottom one">
             <ul>{ingredientList}</ul>
+          </div>
+        </div>
+        <div className="d-flex gap-4 align-items-center">
+          <h4 className="ms-4">Share Recipe</h4>
+          <div className="">
+            <FacebookShareButton
+              url={shareUrl}
+              quote={name}
+              hashtag={"#recipes"}
+            >
+              <FacebookIcon size={40} round={true} />
+            </FacebookShareButton>
+          </div>
+          <div className="">
+            <TwitterShareButton url={shareUrl}>
+              <TwitterIcon size={40} round={true} />
+            </TwitterShareButton>
+          </div>
+          <div className="">
+            <WhatsappShareButton url={shareUrl}>
+              <WhatsappIcon size={40} round={true} />
+            </WhatsappShareButton>
           </div>
         </div>
       </div>
