@@ -1,26 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faBookmark, faHeart} from '@fortawesome/free-solid-svg-icons';
-import { FaFacebookF, FaTwitter , FaTelegram} from "react-icons/fa";
-import { CiMail } from "react-icons/ci";
-import { AiFillInstagram } from "react-icons/ai";
-import React, {useState} from "react";
+import { faArrowLeft, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FaFacebookF, FaTwitter, FaTelegram } from "react-icons/fa";
+import { AiFillInstagram, AiFillMail } from "react-icons/ai";
+import React, { useState } from "react";
 import "../assets/Styles/index.css"
 
 const SingleRecipe = () => {
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
 
-  
+
 
   return <div className="single">
     <div className="left" style={{ backgroundImage: 'url("https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=400")' }}>
-      <FontAwesomeIcon icon={faArrowLeft} style ={{color: "#ffffff", cursor: "pointer"}} />
+      <FontAwesomeIcon icon={faArrowLeft} style={{ color: "#ffffff", cursor: "pointer" }} />
       <div className="left-socials">
-     <FaFacebookF/>
-     <AiFillInstagram/>
-     <FaTwitter/>
-     <FaTelegram/>
-     <CiMail/>
+        <div className="left-line"></div>
+        <FaFacebookF className="left-socials-icon" />
+        <AiFillInstagram className="left-socials-icon" />
+        <FaTwitter className="left-socials-icon" />
+        <FaTelegram className="left-socials-icon" />
+        <AiFillMail className="left-socials-icon" />
+        <div className="left-line" style={{ marginTop: "0.6em" }}></div>
       </div>
     </div>
     <div className="right">
@@ -28,10 +29,10 @@ const SingleRecipe = () => {
         <div className="right-name">
           <h2>Cheese Burger</h2>
           <div className="icons">
-          <FontAwesomeIcon icon={faBookmark}/>
-          <FontAwesomeIcon icon={faHeart} style={{marginLeft: "20", cursor: "pointer"}} />
+            <FontAwesomeIcon icon={faBookmark} />
+            <FontAwesomeIcon icon={faHeart} style={{ marginLeft: "20", cursor: "pointer" }} />
           </div>
-          
+
         </div>
         <div className="right-details">
           <h4>Serves: <span>2</span></h4>
@@ -67,7 +68,7 @@ const SingleRecipe = () => {
             <li><p>fresh lettuce leaves</p></li>
           </ul>
         </div>
-       
+
       </div>
     </div>
   </div>;
