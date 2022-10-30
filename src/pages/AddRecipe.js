@@ -6,18 +6,18 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 // our api
-const api = "";
+const api = "http://localhost:3000/recipes";
 
 // initial data state
 const initialState = {
-  recipe: "",
+  foodname: "",
   description: "",
   ingredients: "",
   country: "",
   people: "",
   rating: "",
-  procedure: "",
-  images: "",
+  instructions: "",
+  image: "",
 };
 
 const AddRecipe = ({ loadRecipes }) => {
@@ -26,14 +26,14 @@ const AddRecipe = ({ loadRecipes }) => {
   const [inputs, setInputs] = useState(initialState);
 
   const {
-    recipe,
+    foodname,
     description,
     ingredients,
     country,
-    people,
+    servings,
     rating,
-    images,
-    procedure,
+    image,
+    instructions,
   } = inputs;
 
   const handleChange1 = (e) => {
@@ -48,14 +48,14 @@ const AddRecipe = ({ loadRecipes }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      !recipe ||
+      !foodname ||
       !description ||
       !ingredients ||
       !country ||
-      !people ||
+      !servings ||
       !rating ||
-      !images ||
-      !procedure
+      !image ||
+      !instructions
     ) {
       toast.error("please fill all input fields");
     } else {
@@ -83,9 +83,9 @@ const AddRecipe = ({ loadRecipes }) => {
         <label>Name:</label>
         <input
           type="text"
-          name="recipe"
+          name="foodname"
           placeholder="name:"
-          value={recipe}
+          value={foodname}
           onChange={handleChange1}
         />
         <br />
@@ -112,9 +112,9 @@ const AddRecipe = ({ loadRecipes }) => {
         <label>Procedure:</label>
         <textarea
           type="text"
-          name="procedure"
+          name="instructions"
           placeholder="write your Procedure:"
-          value={procedure}
+          value={instructions}
           onChange={handleChange1}
         />
 
@@ -131,8 +131,8 @@ const AddRecipe = ({ loadRecipes }) => {
           <label>People:</label>
           <input
             type="number"
-            name="people"
-            value={people}
+            name="servings"
+            value={servings}
             placeholder="2"
             onChange={handleChange1}
           />
@@ -152,8 +152,8 @@ const AddRecipe = ({ loadRecipes }) => {
           <label>Images:</label>
           <input
             type="file"
-            name="images"
-            value={images}
+            name="image"
+            value={image}
             placeholder="0 - 10"
             onChange={handleChange1}
           />
