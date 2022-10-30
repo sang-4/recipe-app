@@ -24,7 +24,7 @@ const NavBar = () => {
 
   // navLinks
   const links = [
-    { id: 1, link: "Recipe", resourceLink: "/recipe" },
+    { id: 1, link: "Recipe", resourceLink: "/Recipe" },
     { id: 2, link: "Products", resourceLink: "/products" },
     { id: 3, link: "Tutorials", resourceLink: "/tutorials" },
     { id: 4, link: "About Us", resourceLink: "/about" },
