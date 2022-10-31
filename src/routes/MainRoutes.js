@@ -50,7 +50,7 @@ const MainRoutes = () => {
           <Route path="recipe" element={<Recipe recipe={recipe} />} />
           <Route
             path="recipe/:recipeId"
-            element={<SingleRecipe recipe={recipe} />}
+            element={<SingleRecipe loadRecipes={loadRecipes} recipe={recipe} />}
           />
           <Route path="tutorials" element={<Tutorials />} />
           <Route path="about" element={<About />} />

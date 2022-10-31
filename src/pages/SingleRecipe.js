@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
@@ -14,9 +14,16 @@ import {
   WhatsappShareButton,
   WhatsappIcon,
 } from "react-share";
+import { AiOutlineDelete } from "react-icons/ai";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const SingleRecipe = ({ recipe }) => {
+// our api
+const api = "http://localhost:5000/recipes";
+
+const SingleRecipe = ({ recipe, loadRecipes }) => {
   const { recipeId } = useParams();
+  const navigate = useNavigate();
 
   // filter recipes
   const selectedRecipe = recipe.find((recip) => recip.id === Number(recipeId));
@@ -42,6 +49,13 @@ const SingleRecipe = ({ recipe }) => {
       <p>{ingredient}</p>
     </li>
   ));
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Arev you sure")) axios.delete(`${api}/${id}`);
+    toast.success("Deleted Successfully");
+    setTimeout(() => loadRecipes(), 500);
+    navigate("/recipe");
+  };
 
   return (
     <div className="single">
@@ -83,6 +97,14 @@ const SingleRecipe = ({ recipe }) => {
         <div className="right-header">
           <div className="right-name">
             <h2>{foodname}</h2>
+            <div className="">
+              <span
+                style={{ cursor: "pointer" ,backgroundColor: "white", color: "black", borderRadius: "50rem",height: "25px", width:"25px", padding:"5px"}}
+                onClick={() => handleDelete(id)}
+              >
+                <AiOutlineDelete />
+              </span>
+            </div>
             <div className="icons">
               <FontAwesomeIcon icon={faBookmark} />
               <FontAwesomeIcon icon={faHeart} style={{ marginLeft: "20" }} />
