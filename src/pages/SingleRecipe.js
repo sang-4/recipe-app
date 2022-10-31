@@ -25,7 +25,7 @@ const SingleRecipe = ({ recipe }) => {
   const {
     id,
     ingredients,
-    name,
+    foodname,
     image,
     total_time_string,
     servings,
@@ -64,7 +64,7 @@ const SingleRecipe = ({ recipe }) => {
           <FacebookShareButton
             className="left-socials-icon"
             url={shareUrl}
-            quote={name}
+            quote={foodname}
             hashtag={"#recipes"}
           >
             <FacebookIcon size={40} round={true} />
@@ -82,7 +82,7 @@ const SingleRecipe = ({ recipe }) => {
       <div className="right">
         <div className="right-header">
           <div className="right-name">
-            <h2>{name}</h2>
+            <h2>{foodname}</h2>
             <div className="icons">
               <FontAwesomeIcon icon={faBookmark} />
               <FontAwesomeIcon icon={faHeart} style={{ marginLeft: "20" }} />
