@@ -20,7 +20,7 @@ import AddRecipe from "../pages/AddRecipe";
 import Procedure from "../pages/Procedure";
 
 // our api
-const api = " http://localhost:5000/recipes";
+const api = "http://localhost:5000/recipes";
 
 const MainRoutes = () => {
   const [recipe, setRecipe] = useState([]);
