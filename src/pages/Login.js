@@ -33,6 +33,10 @@ const Login = ({ handleLoginClose, showLogin, handleShow, setUser }) => {
             username: values.username,
             password: values.password,
           }),
+        }).then((r) => {
+          if (r.ok) {
+            r.json().then((user) => setUser(user));
+          }
         });
         
         toast.success("login Successful");

@@ -21,7 +21,7 @@ function Dash({ user }) {
     <div className="dash">
       <div className="grid one">
         <div class="one-content">
-          <h1>Hello {user?.username}!</h1>
+          <h1>Hello {user?.firstname}!</h1>
           <p>Let's cook :)</p>
         </div>
       </div>
