@@ -34,6 +34,7 @@ const Login = ({ handleLoginClose, showLogin, handleShow, setUser }) => {
             password: values.password,
           }),
         });
+        
         toast.success("login Successful");
         navigate("/dashboard");
       },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,11 +18,32 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { BsPencilSquare } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 // our api
 const api = "http://localhost:5000/recipes";
 
+// initial data state
+const initialState = {
+  foodname: "",
+  description: "",
+  ingredients: "",
+  country: "",
+  servings: "",
+  rating: "",
+  instructions: "",
+  image: "",
+};
+
 const SingleRecipe = ({ recipe, loadRecipes }) => {
+  const [inputs, setInputs] = useState(initialState);
+
+  const [show, setAddRecipeShow] = useState(false);
+
+  const handleAddRecipeClose = () => setAddRecipeShow(false);
+  const handleAddRecipeShow = () => setAddRecipeShow(true);
+
   const { recipeId } = useParams();
   const navigate = useNavigate();
 
@@ -37,6 +58,8 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
     image,
     total_time_string,
     servings,
+    rating,
+    instructions,
     country,
     description,
   } = selectedRecipe;
@@ -57,12 +80,21 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
       toast.success("Deleted Successfully");
       navigate("/recipe");
       setTimeout(() => loadRecipes(), 500);
+    } else {
+      toast.error("Be keen on what you want to delete");
     }
-    toast.error("Be keen on what you want to delete");
-
   };
 
   const handleUpdate = () => {};
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
 
   return (
     <div className="single">
@@ -104,7 +136,7 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
       <div className="right">
         <div className="right-header">
           <div className="d-flex align-items-center justify-content-between p-4">
-            <div className="">
+            <div className="" onClick={handleAddRecipeShow}>
               <span
                 style={{
                   cursor: "pointer",
@@ -169,6 +201,108 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
           </div>
         </div>
       </div>
+
+      {/* add recipe modal */}
+      <>
+        <Modal
+          show={show}
+          onHide={handleAddRecipeClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Update Recipe</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="AddRecipe">
+              <form>
+                <label>Name:</label>
+                <input
+                  type="text"
+                  name="foodname"
+                  placeholder="name:"
+                  value={foodname}
+                  onChange={handleChange}
+                />
+                <br />
+
+                <label>Description:</label>
+                <textarea
+                  type="text"
+                  name="description"
+                  placeholder="full description:"
+                  value={description}
+                  onChange={handleChange}
+                />
+                <br />
+                <label>Ingredients:</label>
+                <input
+                  type="text"
+                  name="ingredients"
+                  value={ingredients}
+                  placeholder="onions, ginger, eggs,..."
+                  onChange={handleChange}
+                />
+
+                <br />
+                <label>Write your procedure instructions:</label>
+                <textarea
+                  type="text"
+                  name="instructions"
+                  placeholder="write your instructions:"
+                  value={instructions}
+                  onChange={handleChange}
+                />
+
+                <div className="short">
+                  <label>Country</label>
+                  <input
+                    type="text"
+                    name="country"
+                    value={country}
+                    placeholder="country"
+                    onChange={handleChange}
+                  />
+                  <br />
+                  <label>servings:</label>
+                  <input
+                    type="number"
+                    name="servings"
+                    value={servings}
+                    placeholder="2"
+                    onChange={handleChange}
+                  />
+
+                  <br />
+
+                  <label>Rating:</label>
+                  <input
+                    type="number"
+                    name="rating"
+                    value={rating}
+                    placeholder="0 - 10"
+                    onChange={handleChange}
+                  />
+                  <br />
+
+                  <label>Image:</label>
+                  <input
+                    type="text"
+                    name="image"
+                    value={image}
+                    placeholder="Paste image url/link"
+                    onChange={handleChange}
+                  />
+                </div>
+                <Button className="btn btn-primary border m-4" variant="contained" type="submit">
+                  Update
+                </Button>
+              </form>
+            </div>
+          </Modal.Body>
+          <Modal.Footer></Modal.Footer>
+        </Modal>
+      </>
     </div>
   );
 };
