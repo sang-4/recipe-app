@@ -22,6 +22,8 @@ const initialState = {
 
 const AddRecipe = ({ loadRecipes }) => {
   const navigate = useNavigate();
+  // const [userId, setUserId] = useState(null);
+  // const [editMode, setEditMode] = useState(null);
 
   const [inputs, setInputs] = useState(initialState);
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
@@ -15,6 +15,7 @@ import {
   WhatsappIcon,
 } from "react-share";
 import { AiOutlineDelete } from "react-icons/ai";
+import { BsPencilSquare } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -51,11 +52,17 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
   ));
 
   const handleDelete = async (id) => {
-    if (window.confirm("Arev you sure")) axios.delete(`${api}/${id}`);
-    toast.success("Deleted Successfully");
-    setTimeout(() => loadRecipes(), 500);
-    navigate("/recipe");
+    if (window.confirm(`Are you sure want to delete "${foodname}"`)) {
+      axios.delete(`${api}/${id}`);
+      toast.success("Deleted Successfully");
+      navigate("/recipe");
+      setTimeout(() => loadRecipes(), 500);
+    }
+    toast.error("Be keen on what you want to delete");
+
   };
+
+  const handleUpdate = () => {};
 
   return (
     <div className="single">
@@ -65,6 +72,7 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
           backgroundImage: `url(
             https://recipes.eerieemu.com${image}
           )`,
+          height: "auto",
         }}
       >
         <Link to="/recipe">
@@ -95,16 +103,42 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
       </div>
       <div className="right">
         <div className="right-header">
-          <div className="right-name">
-            <h2>{foodname}</h2>
+          <div className="d-flex align-items-center justify-content-between p-4">
             <div className="">
               <span
-                style={{ cursor: "pointer" ,backgroundColor: "white", color: "black", borderRadius: "50rem",height: "25px", width:"25px", padding:"5px"}}
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: "white",
+                  color: "black",
+                  borderRadius: "50rem",
+                  height: "25px",
+                  width: "25px",
+                  padding: "5px",
+                }}
+                onClick={() => handleUpdate(id)}
+              >
+                <BsPencilSquare />
+              </span>
+            </div>
+            <div className="">
+              <span
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: "white",
+                  color: "black",
+                  borderRadius: "50rem",
+                  height: "25px",
+                  width: "25px",
+                  padding: "5px",
+                }}
                 onClick={() => handleDelete(id)}
               >
                 <AiOutlineDelete />
               </span>
             </div>
+          </div>
+          <div className="right-name">
+            <h2>{foodname}</h2>
             <div className="icons">
               <FontAwesomeIcon icon={faBookmark} />
               <FontAwesomeIcon icon={faHeart} style={{ marginLeft: "20" }} />
