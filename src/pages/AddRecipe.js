@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 // our api
-const api = "";
+const api = "http://localhost:3000/recipes";
 
 // initial data state
 const initialState = {

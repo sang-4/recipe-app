@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+#ReCipe
+---
+Cooks Create
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is being developed and maintained by:
+* Allan Kiprop - Back End Developer/Scrum Master
+* Douglas Obara - Front End  Developer
+* Precious Omondi - Front End Developer
+* Nicholas Kipkirui - Back End Developer
+* Harry Omondi - Front End Developer
+* Maryanne Onyango - Back End developer
+---
 
-## Available Scripts
+##Description
 
-In the project directory, you can run:
+ReCipe is an app that allows users to view, add, delete, update and comment on recipes, be it their own or those created by other users. Users can also view other users' recipes and comment on them. Users also have the ability to share their favortie recipes with other users via social media platforms.
 
-### `npm start`
+![alt text](./readmephotos/p1.JPG)
+![alt text](./readmephotos/p2.JPG)
+![alt text](./readmephotos/p3.JPG)
+![alt text](./readmephotos/p4.JPG)
+![alt text](./readmephotos/p5.JPG)
+![alt text](./readmephotos/p6.JPG)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##Setup/Installation Requirements
+```
+Fork/Clone this repository to your local machine.(https://github.com/sang-4/recipe-app)
+& cd into the project folder
+& Run npm install to install all dependencies
+& Run npm start to start the app
+```
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Known Bugs
+There are no known bugs at the moment. If you encounter any, please contact us.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##Technologies Used
+* HTML
+* CSS
+* JavaScript
+* React
+* Redux
+* Ruby on Rails(API)
+* PostgreSQL
+* Heroku
+* Postman
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##Support and contact details
+If you have any issues, questions, ideas or concerns, please contact us at:
 
-### `npm run eject`
+recipe.app@gmail.com
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##License
+MIT License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
