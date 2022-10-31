@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
@@ -18,12 +17,17 @@ import Error from "../pages/Error";
 import SingleRecipe from "../pages/SingleRecipe";
 import AddRecipe from "../pages/AddRecipe";
 import Procedure from "../pages/Procedure";
+import Dash from "../pages/Dash";
+
+// routes
+import ProtectedRoute from "./ProtectedRoute";
 
 // our api
 const api = "http://localhost:5000/recipes";
 
 const MainRoutes = () => {
   const [recipe, setRecipe] = useState([]);
+  const [user, setUser] = useState("");
 
   // call loadRecipes function
   useEffect(() => {
@@ -51,7 +55,17 @@ const MainRoutes = () => {
           <Route path="tutorials" element={<Tutorials />} />
           <Route path="about" element={<About />} />
           <Route path="register" element={<Register />} />
-          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login setUser={setUser} />} />
+
+          <Route
+            path="dashboard"
+            element={
+              <ProtectedRoute user={user}>
+                <Dash user={user} />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="addrecipe"
             element={<AddRecipe loadRecipes={loadRecipes} />}
