@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { useFormik } from "formik";
 import { signupSchema } from "../schemas/register";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const initialValues = {
   firstname: "",
@@ -23,24 +24,24 @@ const Register = ({ handleClose, show, handleLoginShow }) => {
       onSubmit: (values, actions) => {
         actions.resetForm();
         handleClose();
-        
+
         fetch("http://localhost:3000/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            Accept: "application/json",
           },
           body: JSON.stringify({
-          firstname: values.firstname,
-          lastname: values.lastname,
-          username: values.username,
-          email: values.email,
-          password: values.password,
-          password_confirmation: values.password_confirmation,
-        }),
-        })
+            firstname: values.firstname,
+            lastname: values.lastname,
+            username: values.username,
+            email: values.email,
+            password: values.password,
+            password_confirmation: values.password_confirmation,
+          }),
+        });
 
-       
+        toast.success("Registration Successfully");
         console.log(values);
       },
     });
@@ -148,9 +149,10 @@ const Register = ({ handleClose, show, handleLoginShow }) => {
                 placeholder="Confirm Password:"
               />
               <div className="error_container">
-                {errors.password_confirmation && touched.password_confirmation && (
-                  <p className="form_error">{errors.password_confirmation}</p>
-                )}
+                {errors.password_confirmation &&
+                  touched.password_confirmation && (
+                    <p className="form_error">{errors.password_confirmation}</p>
+                  )}
               </div>
             </div>
             <div className="row">

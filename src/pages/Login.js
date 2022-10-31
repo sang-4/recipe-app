@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { useFormik } from "formik";
 import { signupSchema } from "../schemas/login";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const initialValues = {
   username: "",
@@ -20,18 +21,18 @@ const Login = ({ handleLoginClose, showLogin, handleShow }) => {
         actions.resetForm();
         handleLoginClose();
 
-        
         fetch("http://localhost:3000/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            Accept: "application/json",
           },
           body: JSON.stringify({
-          username: values.username,
-          password: values.password,
-        }),
-        })
+            username: values.username,
+            password: values.password,
+          }),
+        });
+        toast.success("login Successful");
 
         console.log(values);
       },
