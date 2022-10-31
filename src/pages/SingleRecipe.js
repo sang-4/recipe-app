@@ -6,30 +6,39 @@ import {
   faBookmark,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import { FaFacebookF, FaTwitter , FaTelegram} from "react-icons/fa";
-import { AiFillMail } from "react-icons/ai";
-import { AiFillInstagram } from "react-icons/ai";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+} from "react-share";
 
 const SingleRecipe = ({ recipe }) => {
   const { recipeId } = useParams();
 
-  // filter recipes 
+  // filter recipes
   const selectedRecipe = recipe.find((recip) => recip.id === Number(recipeId));
 
   // destructuring
   const {
+    id,
     ingredients,
-    name,
-    image_path,
+    foodname,
+    image,
     total_time_string,
     servings,
     country,
     description,
   } = selectedRecipe;
 
-  // ingredients 
-  let ingredientList = ingredients.map((ingredient) => (
-    <li>
+  // link to the spoaecific url
+  const shareUrl = `http://localhost:5000/recipe/${id}`;
+
+  // ingredients
+  let ingredientList = ingredients.map((ingredient, index) => (
+    <li key={index}>
       <p>{ingredient}</p>
     </li>
   ));
@@ -40,30 +49,40 @@ const SingleRecipe = ({ recipe }) => {
         className="left"
         style={{
           backgroundImage: `url(
-            https://recipes.eerieemu.com${image_path}
+            https://recipes.eerieemu.com${image}
           )`,
         }}
       >
         <Link to="/recipe">
           <FontAwesomeIcon
             icon={faArrowLeft}
-            style={{ color: "#ffffff", cursor: "pointer" }}
+            style={{ color: "#ffffff", cursor: "pointer", fontSize: "40px" }}
           />
         </Link>
         <div className="left-socials">
-                    <div className="left-line"></div>
-                    <FaFacebookF   className ="left-socials-icon"/>
-                    <AiFillInstagram   className ="left-socials-icon"/>
-                    <FaTwitter   className ="left-socials-icon"/>
-                    <FaTelegram   className ="left-socials-icon"/>
-                    <AiFillMail   className ="left-socials-icon"/>
-                    <div className="left-line" style={{marginTop: "0.6em"}}></div>
-                </div>
+          <div className="left-line"></div>
+          <FacebookShareButton
+            className="left-socials-icon"
+            url={shareUrl}
+            quote={foodname}
+            hashtag={"#recipes"}
+          >
+            <FacebookIcon size={40} round={true} />
+          </FacebookShareButton>
+          <TwitterShareButton className="left-socials-icon" url={shareUrl}>
+            <TwitterIcon size={40} round={true} />
+          </TwitterShareButton>
+          <WhatsappShareButton className="left-socials-icon" url={shareUrl}>
+            <WhatsappIcon size={40} round={true} />
+          </WhatsappShareButton>
+
+          <div className="left-line" style={{ marginTop: "0.6em" }}></div>
+        </div>
       </div>
       <div className="right">
         <div className="right-header">
           <div className="right-name">
-            <h2>{name}</h2>
+            <h2>{foodname}</h2>
             <div className="icons">
               <FontAwesomeIcon icon={faBookmark} />
               <FontAwesomeIcon icon={faHeart} style={{ marginLeft: "20" }} />
@@ -85,10 +104,9 @@ const SingleRecipe = ({ recipe }) => {
           </div>
           <div className="right-selectors">
             <p className="new">Ingredients</p>
-            <Link to="/procedure" >Procedure</Link>
+            <p>Procedure</p>
           </div>
         </div>
-
         <div className="right-bottom">
           <div className="bottom one">
             <ul>{ingredientList}</ul>

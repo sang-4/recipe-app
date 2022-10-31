@@ -1017,10 +1017,7 @@ margin-top: 0.6em;
   
 }
 
-.post-icons p{
- 
-  
-}
+
 
 .post-more{
   font-size: 0.9em;
@@ -1103,3 +1100,58 @@ height: 130px;
   padding: 15px 10px 5px 10px;
 }
 /* Dash */
+/* Add Recipe Styles */
+
+.AddRecipe{
+  background-color: #EC5800;
+  position: relative;
+  padding: 30px;
+  font-size: 16px;
+  font-style: 'Roboto';
+}
+
+.AddRecipe form{
+  /* background-color: grey; */
+  padding: 50px;
+
+}
+
+.AddRecipe form input{
+  height: 30px
+}
+
+.Des{
+  display:flex;
+
+}
+textarea{
+  width:100%;
+  border-radius: 9px;
+  color: grey;
+}
+
+.proc{
+ width:100%;
+}
+
+.AddSub{
+  display: flex;
+  float: right;
+}
+
+.short {
+  display: grid;
+  width:100%;
+  margin-top:-10px;
+
+}
+
+.short input {
+  border-radius: 9px;
+}
+
+label{
+  color: #FFFFFF;
+  font-size: 16px;
+}
+

@@ -40,19 +40,19 @@ const Recipe = ({ recipe }) => {
       <hr />
       <div className="row card__recipe ">
         {searchRecipeInput.length > 1
-          ? filteredRecipe.map(({ id, name, description, image_path }) => (
+          ? filteredRecipe.map(({ id, foodname, description, image }) => (
               <>
-                <div className="col-sm-6 col-md-4 col-lg-3">
+                <div className="col-sm-6 col-md-4 col-lg-3" key={id}>
                   <div className="">
                     <Card className="card_container">
                       <Link to={`/recipe/${id}`} className="recipe__link">
                         <Card.Img
                           variant="top"
-                          src={`https://recipes.eerieemu.com${image_path}`}
+                          src={`https://recipes.eerieemu.com${image}`}
                         />
                         <Card.Body>
                           <Card.Title className="recipe__title">
-                            {name}
+                            {foodname}
                           </Card.Title>
                           <Card.Text className="recipe__description">
                             {truncate(description, 30)}...
@@ -70,19 +70,19 @@ const Recipe = ({ recipe }) => {
                 </div>
               </>
             ))
-          : recipe.map(({ id, name, description, image_path }) => (
+          : recipe.map(({ id, foodname, description, image }) => (
               <>
-                <div className="col-sm-6 col-md-4 col-lg-3">
+                <div className="col-sm-6 col-md-4 col-lg-3" key={id}>
                   <div className="">
                     <Card className="card_container">
                       <Link to={`/recipe/${id}`} className="recipe__link">
                         <Card.Img
                           variant="top"
-                          src={`https://recipes.eerieemu.com${image_path}`}
+                          src={`https://recipes.eerieemu.com${image}`}
                         />
                         <Card.Body>
                           <Card.Title className="recipe__title">
-                            {name}
+                            {foodname}
                           </Card.Title>
                           <Card.Text className="recipe__description">
                             {truncate(description, 30)}...
