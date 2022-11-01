@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 // layout
-import MainLayout from "../layouts/Main/index";
+import MainLayout from "../layouts/Main/Index";
 
 // pages
 import Home from "../pages/Home";

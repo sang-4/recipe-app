@@ -102,7 +102,7 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
         className="left"
         style={{
           backgroundImage: `url(
-            https://recipes.eerieemu.com${image}
+            ${image}
           )`,
           height: "auto",
         }}
