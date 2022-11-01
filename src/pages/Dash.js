@@ -22,7 +22,7 @@ function Dash({ user }) {
       <div className="grid one">
         <div class="one-content">
           <h1>Hello {user?.username}!</h1>
-          <p>Let's cook :)</p>
+          <p>Let's cook :</p>
         </div>
       </div>
       <div className="grid two">
