@@ -25,9 +25,11 @@ import ProtectedRoute from "./ProtectedRoute";
 // our api
 const api = "http://localhost:5000/recipes";
 
+const api2 = "http://127.0.0.1:3000/user";
+
 const MainRoutes = () => {
   const [recipe, setRecipe] = useState([]);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
 
   // call loadRecipes function
   useEffect(() => {
@@ -40,6 +42,17 @@ const MainRoutes = () => {
 
     setRecipe(response.data);
   };
+
+  useEffect(() => {
+    fetch(api2).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+    console.log(user);
+  }, [user]);
+
+  console.log("i am a ", user);
 
   return (
     <BrowserRouter>
