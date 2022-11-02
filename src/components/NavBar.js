@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 
-// images 
+// images
 import logo from "../assets/Images/recipe-sharing-logo-new.png";
 
 // pages
@@ -24,7 +24,7 @@ const NavBar = () => {
 
   // navLinks
   const links = [
-    { id: 1, link: "Recipe", resourceLink: "/Recipe" },
+    { id: 1, link: "Recipe", resourceLink: "/recipe" },
     { id: 2, link: "Products", resourceLink: "/products" },
     { id: 3, link: "Tutorials", resourceLink: "/tutorials" },
     { id: 4, link: "About Us", resourceLink: "/about" },

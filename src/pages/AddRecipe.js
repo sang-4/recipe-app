@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 // our api
-const api = "http://localhost:5000/recipes";
+const api = "http://localhost:3000/recipes";
 
 // initial data state
 const initialState = {
@@ -22,6 +22,8 @@ const initialState = {
 
 const AddRecipe = ({ loadRecipes }) => {
   const navigate = useNavigate();
+  // const [userId, setUserId] = useState(null);
+  // const [editMode, setEditMode] = useState(null);
 
   const [inputs, setInputs] = useState(initialState);
 

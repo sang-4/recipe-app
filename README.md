@@ -3,11 +3,11 @@
 Cooks Create
 
 This project is being developed and maintained by:
-* Allan Kiprop - Back End Developer/Scrum Master
+* Allan Kiprop - Back End Developer
 * Douglas Obara - Front End  Developer
 * Precious Omondi - Front End Developer
 * Nicholas Kipkirui - Back End Developer
-* Harry Omondi - Front End Developer
+* Harrison Omondi - Front End Developer
 * Maryanne Onyango - Back End developer
 ---
 

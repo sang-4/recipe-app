@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useFormik } from "formik";
 import { signupSchema } from "../schemas/login";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const initialValues = {
@@ -12,7 +12,9 @@ const initialValues = {
   password: "",
 };
 
-const Login = ({ handleLoginClose, showLogin, handleShow }) => {
+const Login = ({ handleLoginClose, showLogin, handleShow, setUser }) => {
+  const navigate = useNavigate();
+
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
@@ -31,10 +33,14 @@ const Login = ({ handleLoginClose, showLogin, handleShow }) => {
             username: values.username,
             password: values.password,
           }),
+        }).then((r) => {
+          if (r.ok) {
+            r.json().then((user) => setUser(user));
+          }
         });
+        
         toast.success("login Successful");
-
-        console.log(values);
+        navigate("/dashboard");
       },
     });
 

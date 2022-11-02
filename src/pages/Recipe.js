@@ -48,7 +48,7 @@ const Recipe = ({ recipe }) => {
                       <Link to={`/recipe/${id}`} className="recipe__link">
                         <Card.Img
                           variant="top"
-                          src={`https://recipes.eerieemu.com${image}`}
+                          src={`${image}`}
                         />
                         <Card.Body>
                           <Card.Title className="recipe__title">
@@ -78,7 +78,7 @@ const Recipe = ({ recipe }) => {
                       <Link to={`/recipe/${id}`} className="recipe__link">
                         <Card.Img
                           variant="top"
-                          src={`https://recipes.eerieemu.com${image}`}
+                          src={`${image}`}
                         />
                         <Card.Body>
                           <Card.Title className="recipe__title">
