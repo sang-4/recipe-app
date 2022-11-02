@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown";
 
 // images
 import logo from "../assets/Images/recipe-sharing-logo-new.png";
@@ -8,11 +9,13 @@ import logo from "../assets/Images/recipe-sharing-logo-new.png";
 // pages
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import { toast } from "react-toastify";
 
 const NavBar = () => {
   // modal states
   const [show, setShow] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [register, setRegister] = useState(true);
 
   // register open & close modal
   const handleClose = () => setShow(false);
@@ -29,6 +32,15 @@ const NavBar = () => {
     { id: 3, link: "Tutorials", resourceLink: "/tutorials" },
     { id: 4, link: "About Us", resourceLink: "/about" },
   ];
+
+  const handleLogout = () => {
+    setRegister(false);
+  };
+
+  const handleRegLogout = () => {
+    setRegister(true);
+    toast.success("Logout Successful");
+  };
 
   return (
     <>
@@ -52,11 +64,29 @@ const NavBar = () => {
                 <span className="link__title">{link}</span>
               </NavLink>
             ))}
-            <Link className="nav__link nav__linkRegister" onClick={handleShow}>
-              <span className="link__titleRegister d-flex align-items-center justify-content-center">
-                Register
-              </span>
-            </Link>
+            {register ? (
+              <>
+                <Link
+                  className="nav__link nav__linkRegister"
+                  onClick={handleShow}
+                >
+                  <span className="link__titleRegister d-flex align-items-center justify-content-center">
+                    Register
+                  </span>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  className="nav__link nav__linkRegister"
+                  onClick={handleRegLogout}
+                >
+                  <span className="link__titleRegister d-flex align-items-center justify-content-center">
+                    Logout
+                  </span>
+                </Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -72,6 +102,7 @@ const NavBar = () => {
         handleLoginClose={handleLoginClose}
         handleShow={handleShow}
         showLogin={showLogin}
+        handleLogout={handleLogout}
       />
     </>
   );
