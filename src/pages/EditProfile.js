@@ -20,7 +20,7 @@ function EditProfile() {
         <h2>Edit Profile</h2>
         <div className="card-details">
           <div className="avatar-div">
-            <img src={file} />
+            <img src={file} alt="" />
             {/* <div className="avatar-buttons"> */}
             <input
               type="file"

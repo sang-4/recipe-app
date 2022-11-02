@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
-import Dropdown from "react-bootstrap/Dropdown";
 
 // images
 import logo from "../assets/Images/recipe-sharing-logo-new.png";
