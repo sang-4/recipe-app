@@ -1,19 +1,28 @@
-import React from "react"
+import React, {useState} from "react"
 import "../assets/Styles/index.css"
 
 function EditProfile() {
+    const [file, setFile] = useState();
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
     return (
         <div className="edit">
             <div className="edit-card">
                 <h2>Edit Profile</h2>
                 <div className="card-details">
                     <div className="avatar-div">
+
+
+                        <img src={file} />
+                        {/* <div className="avatar-buttons"> */}
+                        <input type="file" onChange={handleChange} placeholder="Upload" className="avatar-btn"/>
                         
                         
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/768px-User-avatar.svg.png" />
-                            <button className="avatar-btn">Upload</button>
-                            <button className="avatar-btn">Remove</button>
-                        
+
+                        {/* </div> */}
+                       
 
                     </div>
                     <form>
@@ -33,14 +42,14 @@ function EditProfile() {
                             <input type="text" name="" required="" />
                             <label>Confirm password</label>
                         </div>
-                       
+
                         <div className="delete">
                             <div className="delete-text">
-                            <h5>Delete account</h5>
-                            <p>By deleting your account you will lose all your data</p>
+                                <h5>Delete account</h5>
+                                <p>By deleting your account you will lose all your data</p>
                             </div>
                             <button className="delete-btn">Delete</button>
-                            
+
                         </div>
                         <div className="edit-btn">
                             <button className="editing-btn">
