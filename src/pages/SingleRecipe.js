@@ -85,6 +85,11 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
     }
   };
 
+  const handleRecipeUpdate = () => {
+    toast.success("Updated Successfully");
+    navigate("/recipe");
+  };
+
   const handleUpdate = () => {};
 
   const handleChange = (e) => {
@@ -209,13 +214,14 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
           onHide={handleAddRecipeClose}
           backdrop="static"
           keyboard={false}
+          size="lg"
         >
           <Modal.Header closeButton>
             <Modal.Title>Update Recipe</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="AddRecipe">
-              <form>
+              <form onSubmit={handleRecipeUpdate}>
                 <label>Name:</label>
                 <input
                   type="text"
@@ -294,7 +300,11 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
                     onChange={handleChange}
                   />
                 </div>
-                <Button className="btn btn-primary border m-4" variant="contained" type="submit">
+                <Button
+                  className="btn btn-primary border m-4"
+                  variant="contained"
+                  type="submit"
+                >
                   Update
                 </Button>
               </form>

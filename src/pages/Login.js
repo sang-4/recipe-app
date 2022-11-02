@@ -28,6 +28,7 @@ const Login = ({
       onSubmit: (values, actions) => {
         actions.resetForm();
         handleLoginClose();
+        
 
         fetch("http://localhost:3000/login", {
           method: "POST",

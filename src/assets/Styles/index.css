@@ -24,6 +24,41 @@ font-family: 'Poppins', sans-serif;
   font-family: "Poppins", sans-serif;
 }
 
+.profile__edit{
+  text-decoration: none !important;
+  border: 1px solid black;
+  padding: 2px;
+  border-radius: 15px 2px ;
+  color: var(--primary-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.profile__edit__dash{
+  /* text-decoration: none !important; */
+  /* border: 1px solid black; */
+  padding: 2px;
+  /* border-radius: 15px 2px ; */
+  color: var(--primary-color);
+}
+
+.profile__edit__container{
+  position: absolute;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  margin: 50px;
+
+}
+
+.profile__edit:hover{
+  color: #ec5800;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.profile__edit__dash:hover{
+  color: #ec5600bd;
+}
+
 /* Navbar */
 .logo {
   border-radius: 10px;
@@ -899,7 +934,7 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 100%;
   height: 100%;
   opacity: 0.8;
-  background-image: url("https://images.pexels.com/photos/3338497/pexels-photo-3338497.jpeg?auto=compress&cs=tinysrgb&w=400");
+  background-image: url("https://recipes.eerieemu.com/static/recipes/1012869-dry-brined-turkey.jpg");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;

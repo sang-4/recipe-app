@@ -7,7 +7,7 @@ import {
   faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function Dash({ user }) {
   const navigate = useNavigate();
@@ -27,6 +27,11 @@ function Dash({ user }) {
       </div>
       <div className="grid two">
         <div className="grid-profile">
+          <div className="mb-3">
+            <NavLink className="profile__edit" to="/profile">
+              My Profile
+            </NavLink>
+          </div>
           <img
             alt="recipe_pic"
             src={avatars[Math.floor(Math.random() * avatars.length)]}
