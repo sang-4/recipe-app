@@ -22,7 +22,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 // our api
-const api = "http://localhost:5000/recipes";
+const api = "http://localhost:3000/recipes";
 
 // initial data state
 const initialState = {
@@ -66,7 +66,7 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
   } = selectedRecipe;
 
   // link to the spoaecific url
-  const shareUrl = `http://localhost:5000/recipe/${id}`;
+  const shareUrl = `http://localhost:3000/recipe/${id}`;
 
   const handleDelete = async (id) => {
     if (window.confirm(`Are you sure want to delete "${foodname}"`)) {

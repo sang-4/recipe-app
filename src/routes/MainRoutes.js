@@ -25,7 +25,7 @@ import EditProfile from "../pages/EditProfile";
 import ProtectedRoute from "./ProtectedRoute";
 
 // our api
-const api = "http://localhost:5000/recipes";
+const api = "http://localhost:3000/recipes";
 
 const api2 = "http://127.0.0.1:3000/user";
 
