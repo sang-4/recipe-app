@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link,useNavigate } from "react-router-dom";
 import { Nav, Navbar } from "react-bootstrap";
 
 // images
@@ -32,13 +32,20 @@ const NavBar = () => {
     { id: 4, link: "About Us", resourceLink: "/about" },
   ];
 
+   const navigate = useNavigate();
+
   const handleLogout = () => {
     setRegister(false);
   };
 
   const handleRegLogout = () => {
-    setRegister(true);
-    toast.success("Logout Successful");
+    fetch("http://localhost:3000/logout", { method: "DELETE" }).then((r) => {
+      if (r) {
+        navigate("/");
+        setRegister(true);
+        toast.success("Logout Successful");
+      }
+    });
   };
 
   return (

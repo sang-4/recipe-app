@@ -46,10 +46,7 @@ const Recipe = ({ recipe }) => {
                   <div className="">
                     <Card className="card_container">
                       <Link to={`/recipe/${id}`} className="recipe__link">
-                        <Card.Img
-                          variant="top"
-                          src={`${image}`}
-                        />
+                        <Card.Img variant="top" src={`${image}`} />
                         <Card.Body>
                           <Card.Title className="recipe__title">
                             {foodname}
@@ -76,10 +73,7 @@ const Recipe = ({ recipe }) => {
                   <div className="">
                     <Card className="card_container">
                       <Link to={`/recipe/${id}`} className="recipe__link">
-                        <Card.Img
-                          variant="top"
-                          src={`${image}`}
-                        />
+                        <Card.Img variant="top" src={`${image}`} />
                         <Card.Body>
                           <Card.Title className="recipe__title">
                             {foodname}
