@@ -19,6 +19,7 @@ ReCipe is an app that allows users to view, add, delete, update and comment on r
 ![alt text](./readmephotos/p2.JPG)
 ![alt text](./readmephotos/p3.JPG)
 ![alt text](./readmephotos/p4.JPG)
+![alt text](./readmephotos/p7.JPG)
 ![alt text](./readmephotos/p5.JPG)
 ![alt text](./readmephotos/p6.JPG)
 
