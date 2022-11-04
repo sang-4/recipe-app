@@ -35,11 +35,11 @@ function EditProfile() {
                             <label>Email address</label>
                         </div>
                         <div class="user-box">
-                            <input type="text" name="" required="" />
+                            <input type="password" name="" required="" />
                             <label>Reset password</label>
                         </div>
                         <div class="user-box">
-                            <input type="text" name="" required="" />
+                            <input type="password" name="" required="" />
                             <label>Confirm password</label>
                         </div>
 
