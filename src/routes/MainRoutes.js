@@ -18,12 +18,14 @@ import SingleRecipe from "../pages/SingleRecipe";
 import AddRecipe from "../pages/AddRecipe";
 import Procedure from "../pages/Procedure";
 import Dash from "../pages/Dash";
+import EditProfile from "../pages/EditProfile";
+
 
 // routes
 import ProtectedRoute from "./ProtectedRoute";
 
 // our api
-const api = "http://localhost:5000/recipes";
+const api = "http://localhost:3000/recipes";
 
 const api2 = "http://127.0.0.1:3000/user";
 
@@ -68,7 +70,7 @@ const MainRoutes = () => {
           <Route path="tutorials" element={<Tutorials />} />
           <Route path="about" element={<About />} />
           <Route path="register" element={<Register />} />
-          <Route path="register" element={<Register />} />
+          <Route path="profile" element={<EditProfile />} />
           <Route path="login" element={<Login setUser={setUser} />} />
 
           <Route

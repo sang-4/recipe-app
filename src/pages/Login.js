@@ -12,7 +12,13 @@ const initialValues = {
   password: "",
 };
 
-const Login = ({ handleLoginClose, showLogin, handleShow, setUser }) => {
+const Login = ({
+  handleLoginClose,
+  showLogin,
+  handleShow,
+  setUser,
+  handleLogout,
+}) => {
   const navigate = useNavigate();
 
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
@@ -22,6 +28,7 @@ const Login = ({ handleLoginClose, showLogin, handleShow, setUser }) => {
       onSubmit: (values, actions) => {
         actions.resetForm();
         handleLoginClose();
+        
 
         fetch("http://localhost:3000/login", {
           method: "POST",
@@ -38,8 +45,9 @@ const Login = ({ handleLoginClose, showLogin, handleShow, setUser }) => {
             r.json().then((user) => setUser(user));
           }
         });
-        
+
         toast.success("login Successful");
+        handleLogout();
         navigate("/dashboard");
       },
     });
