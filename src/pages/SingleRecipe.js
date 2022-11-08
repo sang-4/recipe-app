@@ -101,7 +101,7 @@ const SingleRecipe = ({ recipe, loadRecipes }) => {
         <div
           className="left recipe__bg"
           style={{
-            backgroundImage: `url(
+            backgroundImage: `url(https://recipes.eerieemu.com
             ${image}
           )`,
             height: "auto",

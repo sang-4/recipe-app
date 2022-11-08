@@ -23,10 +23,8 @@ const Register = ({ handleClose, show, handleLoginShow }) => {
       validationSchema: signupSchema,
       onSubmit: (values, actions) => {
         actions.resetForm();
-        handleClose();
-        handleLoginShow();
-
-        fetch("http://localhost:3000/users", {
+       
+        fetch("http://127.0.0.1:3000/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
