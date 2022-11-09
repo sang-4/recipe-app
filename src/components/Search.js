@@ -20,5 +20,7 @@ const Search = ({ searchItems }) => {
     </div>
   );
 };
-
+gs
 export default Search;
+
+
