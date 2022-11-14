@@ -1,7 +1,7 @@
 #ReCipe
 ---
 Live links
-Click [here](recipe-app-sang-4.vercel.app, recipe-app-git-main-sang-4.vercel.app, recipe-app-five-zeta.vercel.app) to view live site. 
+Click [here](www.recipe-app-sang-4.vercel.app) to view live site. 
 ---
 
 
