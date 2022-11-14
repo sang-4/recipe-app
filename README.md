@@ -1,12 +1,11 @@
 #ReCipe
 ---
----
 Live links
-* recipe-app-sang-4.vercel.app
-* recipe-app-git-main-sang-4.vercel.app
-* recipe-app-five-zeta.vercel.app
+Click [here](recipe-app-sang-4.vercel.app, recipe-app-git-main-sang-4.vercel.app, recipe-app-five-zeta.vercel.app) to view live site. 
 ---
 
+
+---
 Cooks Create
 
 This project is being developed and maintained by:
