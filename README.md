@@ -9,7 +9,7 @@ Click [here](https://recipe-app-sang-4.vercel.app/) to view live site.
 Cooks Create
 
 This project is being developed and maintained by:
-* Allan Kiprop - Back End Developer
+* Allan Kiprop - Back End Developer/Scrum
 * Douglas Obara - Front End  Developer
 * Precious Omondi - Front End Developer
 * Nicholas Kipkirui - Back End Developer
