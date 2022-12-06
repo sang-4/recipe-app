@@ -3,7 +3,15 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
 
-const Recipe = ({ recipe }) => {
+
+// our api
+const api = "http://localhost:5000/recipes";
+
+const Recipe = () => {
+  // recipe state
+  const [recipe, setRecipe] = useState([]);
+
+
   // search filter state
   const [searchRecipeInput, setSearchRecipeInput] = useState("");
   const [filteredRecipe, setFilteredRecipe] = useState([]);
