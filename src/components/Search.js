@@ -20,5 +20,4 @@ const Search = ({ searchItems }) => {
     </div>
   );
 };
-
 export default Search;

@@ -4,14 +4,23 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useFormik } from "formik";
 import { signupSchema } from "../schemas/login";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const initialValues = {
   username: "",
   password: "",
 };
 
-const Login = ({ handleLoginClose, showLogin, handleShow }) => {
+const Login = ({
+  handleLoginClose,
+  showLogin,
+  handleShow,
+  setUser,
+  handleLogout,
+}) => {
+  const navigate = useNavigate();
+
   const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
     useFormik({
       initialValues,
@@ -19,21 +28,27 @@ const Login = ({ handleLoginClose, showLogin, handleShow }) => {
       onSubmit: (values, actions) => {
         actions.resetForm();
         handleLoginClose();
-
         
+
         fetch("http://localhost:3000/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json"
+            Accept: "application/json",
           },
           body: JSON.stringify({
-          username: values.username,
-          password: values.password,
-        }),
-        })
+            username: values.username,
+            password: values.password,
+          }),
+        }).then((r) => {
+          if (r.ok) {
+            r.json().then((user) => setUser(user));
+          }
+        });
 
-        console.log(values);
+        toast.success("login Successful");
+        handleLogout();
+        navigate("/dashboard");
       },
     });
 

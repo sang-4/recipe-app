@@ -1,11 +1,14 @@
-import React from "react";
-import pan from "../assets/Images/pan-spray-new.png";
 
-function Hero() {
+import React from "react"
+import { Link } from 'react-router-dom'
+import pan from "../assets/Images/pan-spray.png"
+
+
+function Hero({ handleAddRecipeShow }) {
   return (
-    <div className="hero row">
-      <div className="hero-text col-md-6">
-        <div className="text mt-5">
+    <div className="hero">
+      <div className="hero-text">
+        <div className="text">
           <h1>Cooks'</h1>
           <h1>Creations</h1>
           <p>
@@ -14,11 +17,15 @@ function Hero() {
           </p>
           <div className="buttons">
             <button className="btn-get">Get recipe</button>
-            <button className="btn-add">Add recipe</button>
+            <Link to="addrecipe">
+              <button className="btn-add">
+                Add recipe
+              </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="hero-image col-md-6">
+      <div className="hero-image">
         <div className="image-sect">
           <div className="hero-blob"></div>
           <div className="image-sect image">
@@ -30,4 +37,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Hero

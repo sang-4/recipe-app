@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 
-const index = () => {
+const Index = () => {
   return (
     <>
       <Navbar />
@@ -15,4 +15,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
