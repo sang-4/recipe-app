@@ -1,7 +1,7 @@
 #ReCipe
 ---
 Live links
-Click [here](https://recipe-app-sang-4.vercel.app/) to view live site. 
+Click [here](https://recipe-app-asangk.vercel.app) to view live site. 
 ---
 
 
